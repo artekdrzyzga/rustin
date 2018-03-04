@@ -1,0 +1,63 @@
+<%= form_with(model: ad, local: true) do |form| %>
+  <% if ad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+
+      <ul>
+      <% ad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :ad_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size, id: :ad_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :colour %>
+    <%= form.text_field :colour, id: :ad_colour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :ad_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :base %>
+    <%= form.text_field :base, id: :ad_base %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dryingtime %>
+    <%= form.text_field :dryingtime, id: :ad_dryingtime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coverage %>
+    <%= form.text_field :coverage, id: :ad_coverage %>
+  </div>
+   
+  <div class="field">
+    <%= form.label :Type %>
+    <%= form.text_field :typ, id: :ad_typ %>
+  </div>
+  
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :ad_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
