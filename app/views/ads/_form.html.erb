@@ -51,12 +51,14 @@
     <%= form.text_field :typ, id: :ad_typ %>
   </div>
   
-
   <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :ad_image %>
-  </div>
+   <%= form.label :image %>
+   <%= form.file_field :image, id: :ad_image %>
+ </div>
 
+
+
+  
   <div class="actions">
     <%= form.submit %>
   </div>
