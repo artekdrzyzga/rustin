@@ -3,8 +3,14 @@ class AdsController < ApplicationController
 
   # GET /ads
   # GET /ads.json
+  
   def index
-    @ads = Ad.all
+    if params[:type].present?
+      @ads = Ad.where(typ: params[:type])
+    else  
+      @ads = Ad.all
+    end  
+    # @ads = Ad.all
   end
 
   # GET /ads/1
