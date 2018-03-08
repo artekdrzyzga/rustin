@@ -38,6 +38,8 @@ gem "twitter-bootstrap-rails"
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 
+gem 'authlogic'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
