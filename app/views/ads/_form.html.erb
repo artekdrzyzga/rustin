@@ -11,55 +11,68 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :ad_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.text_field :size, id: :ad_size %>
-  </div>
+<div class="container mx-auto">
+  <div class="row"> 
+      <div class="form-group col-md-6 field">
+        <label for="przykladowyEmail"><%= form.label :Name %></label>
+        <%= form.text_field :name, id: :ad_name, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-2 field">
+        <label for="przykladowyEmail"><%= form.label :Size %></label>
+        <%= form.text_field :size, id: :ad_size, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-4 field">
+        <label for="przykladowyEmail"><%= form.label :Colour %></label>
+        <%= form.text_field :colour, id: :ad_colour, class: 'form-control' %>
+      </div>
+  </div>  
 
-  <div class="field">
-    <%= form.label :colour %>
-    <%= form.text_field :colour, id: :ad_colour %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :ad_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :base %>
-    <%= form.text_field :base, id: :ad_base %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dryingtime %>
-    <%= form.text_field :dryingtime, id: :ad_dryingtime %>
-  </div>
-
-  <div class="field">
-    <%= form.label :coverage %>
-    <%= form.text_field :coverage, id: :ad_coverage %>
-  </div>
-   
-  <div class="field">
-    <%= form.label :Type %>
-    <%= form.text_field :typ, id: :ad_typ %>
-  </div>
+  <div class="row"> 
+      <div class="form-group col-md-12 field">
+         <label for="przykladowyEmail"><%= form.label :Description %></label>
+         <%= form.text_area :description, id: :ad_description, class: 'form-control' %>
+      </div>
+  </div>  
   
-  <div class="field">
-   <%= form.label :image %>
-   <%= form.file_field :image, id: :ad_image %>
- </div>
-
-
-
-  
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row">
+      <div class="form-group col-md-2 field">
+        <label for="przykladowyEmail"><%= form.label :Base %></label>
+        <%= form.text_field :base, id: :ad_base, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-2 field">
+        <label for="przykladowyEmail"><%= form.label :Dryingtime %></label>
+        <%= form.text_field :dryingtime, id: :ad_dryingtime, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-2 field">
+        <label for="przykladowyEmail"><%= form.label :Coverage %></label>
+        <%= form.text_field :coverage, id: :ad_coverage, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-6 field">
+        <label for="przykladowyEmail"><%= form.label :Type %></label>
+        <%= form.text_field :typ, id: :ad_typ, class: 'form-control' %>
+      </div>  
   </div>
+
+  <div class="row">
+      <div class="form-group col-md-5 field">
+        <%= form.file_field :image, id: :ad_image, class:'btn btn-primary btn-lg' %>
+      </div>
+      
+      <div class="form-group col-md-3 field">
+      </div>
+      
+      <div class="form-group col-md-4 field">
+         <%= form.submit 'Save data', class: 'btn btn-primary btn-lg' %>
+      </div>
+      
+
+  </div>
+  <div class="row"><p></p> </div>
+</div>
 <% end %>
+
+
+
+
+
