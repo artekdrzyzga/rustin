@@ -1,12 +1,48 @@
 Rails.application.routes.draw do
+  get 'user_transactions_elements/index'
+
+  get 'user_transactions_elements/index'
+  get 'user_transactions/index'
+
+
+  resources :tranelems
+  resources :tranheads
+ 
   get 'users/list'
 
-  get 'users/new'
+  #get 'users/new'
 
-  get 'pages/index'
+  #get 'pages/index'
  
-  
+ 
+  resources :tranheads, :only => [:index] do
+    collection do
+      post 'add_or_update_basket'
+    end
+  end 
+
+
+  resources :user_transactions do
+    member do
+      get 'sent'
+    end
+    resources :user_transactions_elements
+  end
+  resources :user_transactions_elements
+
+
    resources :ads
+
+   resources :admin_transactions do
+    member do
+      get 'sent'
+    end
+    resources :admin_transactions_elements
+  end
+  resources :admin_transactions_elements
+
+
+
   # root 'ads#index'
   resources :pages, :only => [:index]
 

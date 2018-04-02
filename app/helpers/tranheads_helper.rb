@@ -1,0 +1,2 @@
+module TranheadsHelper
+end

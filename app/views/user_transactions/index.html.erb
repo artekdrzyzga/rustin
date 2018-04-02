@@ -1,0 +1,54 @@
+<div class="row">
+  <address>
+    <strong><%= current_user.company %>.</strong><br>
+     <%= current_user.street %><br>
+     <%= current_user.city %>,  <%= current_user.postcode %><br>
+    <abbr title="Phone">P:</abbr> <%= current_user.phonenumber %>
+  </address>
+  <address>
+    <strong>E-mail</strong><br>
+    <a href="mailto:#"><%= current_user.email %></a>
+  </address>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-2"><strong>transaction number</strong></div>
+  <div class="col-md-3"><strong>creation date</strong></div>
+  <div class="col-md-2"><strong>status</strong></div>
+  <div class="col-md-2"><strong>details</strong></div>
+  <div class="col-md-2"><strong>actions</strong></div>
+</div>
+<hr>
+
+<% @tranheads.each  do |tranhead| %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= tranhead.id %>
+    </div>
+    <div class="col-md-3">
+      <%= tranhead.created_at %>
+    </div>
+
+    <div class="col-md-2">
+      <%= tranhead.status %>
+    </div>
+
+    <div class="col-md-2">
+    <%= link_to("details ...", user_transaction_user_transactions_elements_path(tranhead)) %>
+  </div>
+
+
+ <% if (Tranhead::STATUSES.key(tranhead.status) == 1) %>
+  <div class="col-md-2">
+    <%= link_to "Close transaction", sent_user_transaction_path(tranhead.id) %>
+  </div>
+<% end %>
+
+         
+
+    
+    <hr>
+  </div>
+<% end %>

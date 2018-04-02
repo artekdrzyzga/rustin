@@ -1,8 +1,14 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_account, only: [:new, :edit, :update, :destroy]
   # GET /ads
   # GET /ads.json
+  
+  def check_account
+    if current_user.blank? || (current_user.admin == false)
+      redirect_to root_path 
+    end 
+  end
   
   def index
     if params[:type].present?

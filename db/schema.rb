@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304161206) do
+ActiveRecord::Schema.define(version: 20180402073350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 20180304161206) do
     t.string "typ"
   end
 
+  create_table "tranelems", force: :cascade do |t|
+    t.integer "tranhead_id"
+    t.integer "ad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "item_count", default: 0
+  end
+
+  create_table "tranheads", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+  end
+
   create_table "user_sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,6 +56,21 @@ ActiveRecord::Schema.define(version: 20180304161206) do
     t.string "persistence_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "surname"
+    t.string "company"
+    t.string "city"
+    t.string "street"
+    t.string "postcode"
+    t.string "phonenumber"
+    t.datetime "last_login_at"
+    t.string "last_login_ip"
+    t.integer "login_count", default: 0, null: false
+    t.integer "failed_login_count", default: 0, null: false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.string "current_login_ip"
+    t.integer "admin", default: 0, null: false
   end
 
 end

@@ -1,0 +1,27 @@
+<%= form_with(model: tranelem, local: true) do |form| %>
+  <% if tranelem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tranelem.errors.count, "error") %> prohibited this tranelem from being saved:</h2>
+
+      <ul>
+      <% tranelem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tranhead_id %>
+    <%= form.text_field :tranhead_id, id: :tranelem_tranhead_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ad_id %>
+    <%= form.text_field :ad_id, id: :tranelem_ad_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

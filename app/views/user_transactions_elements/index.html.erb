@@ -1,0 +1,44 @@
+
+<h1>UserTransactionsElements#index</h1>
+
+
+ <% @tranelems.each  do |tre| %>
+     
+    <div class="row">
+
+      <div class="col-md-1">
+        <%= tre.id %>
+      </div>
+      
+      <div class="col-md-1">
+        <%= image_tag tre.ad.image ,class: "img-responsive" %>	
+      </div>
+      
+      <div class="col-md-2">
+        <%= tre.ad.name %>
+      </div>
+      
+      <div class="col-md-2">
+        <%= tre.created_at %>
+      </div>
+      
+      <div class="col-md-2">
+        <%= tre.tranhead_id %>
+      </div>
+      
+      <div class="col-md-2">
+        <%= tre.ad_id %>
+      </div>
+      
+      <div class="col=md-2">
+        <%= tre.item_count %>
+      </div>
+       
+    </div>
+     <hr>
+
+     
+
+    <% end %>
+
+    <%= link_to("back", user_transactions_path) %>

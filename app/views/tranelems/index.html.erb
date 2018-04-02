@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tranelems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tranhead</th>
+      <th>Ad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tranelems.each do |tranelem| %>
+      <tr>
+        <td><%= tranelem.tranhead_id %></td>
+        <td><%= tranelem.ad_id %></td>
+        <td><%= tranelem.ad.name %></td>
+        
+        <td><%= link_to 'Show', tranelem %></td>
+        <td><%= link_to 'Edit', edit_tranelem_path(tranelem) %></td>
+        <td><%= link_to 'Destroy', tranelem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tranelem', new_tranelem_path %>

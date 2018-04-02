@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tranhead.user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @tranhead.status %>
+</p>
+
+<%= link_to 'Edit', edit_tranhead_path(@tranhead) %> |
+<%= link_to 'Back', tranheads_path %>
