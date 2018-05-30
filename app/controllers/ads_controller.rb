@@ -10,14 +10,26 @@ class AdsController < ApplicationController
     end 
   end
   
+
   def index
-    if params[:type].present?
-      @ads = Ad.where(typ: params[:type])
-    else  
-      @ads = Ad.all
-    end  
-    # @ads = Ad.all
+    @ads = Ad.search(params[:search])
   end
+
+
+
+ # def index
+ #   if params[:type].present?
+ #     @ads = Ad.where(typ: params[:type])
+ #   else  
+ #     @ads = Ad.all
+ #   end  
+
+    ## @ads = Ad.all
+#  end
+
+
+
+
 
   # GET /ads/1
   # GET /ads/1.json
@@ -81,6 +93,6 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      params.require(:ad).permit(:name, :size, :colour, :description, :base, :dryingtime, :coverage, :image, :typ)
+      params.require(:ad).permit(:name, :size, :colour, :description, :base, :dryingtime, :coverage, :image, :typ, :nazwa)
     end
 end

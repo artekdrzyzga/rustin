@@ -7,10 +7,12 @@ Rails.application.routes.draw do
 
   resources :tranelems
   resources :tranheads
+  
+  
  
   get 'users/list'
 
-  #get 'users/new'
+  get 'users/new'
 
   #get 'pages/index'
  
