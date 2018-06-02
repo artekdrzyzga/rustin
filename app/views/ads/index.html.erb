@@ -4,52 +4,8 @@
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-  
+
 <% end %>
-
-
-
-
-<% @ads.each  do |ad| %>
-  <div class="col-md-3">
-    <div class="thumbnail" >
-       <h5><%= link_to ad.name, ad %></h5>
-       <%= image_tag ad.image ,class: "img-responsive" %>  
-        <div class="caption">
-          <small><p class="text-right">Stock code: <%=ad.typ%></p></small>  
-          <h6 class="text-danger" >from £ </h6>
-
-          <% if current_user %>
-          <%= form_tag add_or_update_basket_tranheads_path do %>
-          <%= hidden_field_tag "ad[id]", ad.id %>
-          <div class="row" > 
-            <div class="col-xs-3">
-              <h5> Quantity: </h5>
-            </div>
-            <div class="col-xs-4">
-              <%#= text_field_tag "ad[item_count]", 1 %>
-              <%= text_area_tag  'ad[item_count]', 1, size: "7x1", class: 'form-control'%>
-            </div>                
-                          <%#= f.password_field :password, class: 'form-control' %>
-                          <%#= text_field_tag('input_second', nil, class: 'form-control')  %> 
-            <div class="col-xs-2"> 
-              <%= submit_tag "Add to basket", class: 'btn btn-primary btn-xs' %>
-            </div>
-          </div>
-          <%#= link_to "Add to bascet", " ", class: 'btn btn-info btn-xs' %>
-          <% end %>
-          <% end %>
-        </div>
-    </div>
-  </div>  
-<% end %>
-
-<div class="row" > 
-  <div class="col-xs-3">
-     
-  </div>  
+<div id="ads_list">
+  <%= render :partial => "ads_list" %>
 </div>
-
-<footer class="page-footer font-small blue-grey lighten-5 mt-4">
-  <%= will_paginate @ads %>
-</footer>
