@@ -4,8 +4,9 @@
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-
+  
 <% end %>
+
 
 
 
@@ -38,13 +39,17 @@
           <%#= link_to "Add to bascet", " ", class: 'btn btn-info btn-xs' %>
           <% end %>
           <% end %>
-
-
         </div>
     </div>
-  </div>
+  </div>  
+<% end %>
 
-<% end %> 
+<div class="row" > 
+  <div class="col-xs-3">
+     
+  </div>  
+</div>
 
-
-
+<footer class="page-footer font-small blue-grey lighten-5 mt-4">
+  <%= will_paginate @ads %>
+</footer>
